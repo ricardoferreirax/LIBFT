@@ -6,7 +6,7 @@
 /*   By: rmedeiro <rmedeiro@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/08 22:48:40 by rmedeiro          #+#    #+#             */
-/*   Updated: 2025/04/09 09:35:06 by rmedeiro         ###   ########.fr       */
+/*   Updated: 2025/04/11 11:05:35 by rmedeiro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,8 +32,7 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 	return (0);
 }
 
-/* 
-int main()
+/* int main()
 {
 	char str_memcmp1[] = "Hello World";
 	char str_memcmp2[] = "HelloWorld";
@@ -45,5 +44,4 @@ int main()
 	printf("memcmp: %d\n", res_orig);
 
 	return 0;
-} 
-*/
+}  */

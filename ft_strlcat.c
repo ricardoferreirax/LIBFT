@@ -6,7 +6,7 @@
 /*   By: rmedeiro <rmedeiro@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/08 23:30:46 by rmedeiro          #+#    #+#             */
-/*   Updated: 2025/04/09 09:37:43 by rmedeiro         ###   ########.fr       */
+/*   Updated: 2025/04/10 14:38:02 by rmedeiro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,17 +36,15 @@ size_t	ft_strlcat(char *dest, const char *src, size_t size)
 	return (dest_len + src_len);
 }
 
-/* int main(int argc, char **argv)
+/* #include <stdio.h>
+
+int	main(void)
 {
-	if (argc < 2)
-		return (1);
-
-	char dest01[20] = "Hello, ";
-	size_t size = 16;
-
-	size_t result = ft_strlcat(dest01, argv[1], size);
-	printf("ft_strlcat(%s): %s\n", argv[1], dest01);
-	printf("Return value: %zu\n", result);
+	char a[] = "Hello";  // src
+	char b[50] = " World";
+	printf("BEFORE: src: %s and dest: %s\n", a, b);
+	ft_strlcat(b, a, 11);
+	printf("AFTER: src: %s and dest: %s\n", a, b);
 
 	return (0);
 } */

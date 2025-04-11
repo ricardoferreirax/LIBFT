@@ -6,29 +6,11 @@
 /*   By: rmedeiro <rmedeiro@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/08 23:43:29 by rmedeiro          #+#    #+#             */
-/*   Updated: 2025/04/09 09:38:20 by rmedeiro         ###   ########.fr       */
+/*   Updated: 2025/04/11 14:45:49 by rmedeiro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-/* char	*ft_strrchr(const char *s, int c)
-{
-	size_t	i;
-	char	*last;
-
-	i = 0;
-	last = NULL;
-	while (s[i] != '\0')
-	{
-		if (s[i] == (char)c)
-			last = (char *)(s + i);
-		i++;
-	}
-	if ((char)c == '\0')
-		return ((char *)(s + i));
-	return (last);
-} */
 
 char	*ft_strrchr(const char *s, int c)
 {
@@ -44,10 +26,12 @@ char	*ft_strrchr(const char *s, int c)
 	return (0);
 }
 
-/* int	main(int argc, char **argv)
+/* #include <stdio.h>
+
+int	main(void)
 {
-	if (argc == 2)
-		printf("ft_strrchr: %s", ft_strrchr(argv[1], 'o'));
-    printf ("\n");
+	printf("ft_strrchr: %s\n", ft_strrchr("hujhk\0banana", '\0'));
+	printf("strrchr: %s\n", strrchr("hujhk\0banana", '\0'));
+
 	return (0);
 } */

@@ -6,7 +6,7 @@
 /*   By: rmedeiro <rmedeiro@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/08 23:39:32 by rmedeiro          #+#    #+#             */
-/*   Updated: 2025/04/09 15:46:08 by rmedeiro         ###   ########.fr       */
+/*   Updated: 2025/04/10 14:09:17 by rmedeiro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,14 +34,9 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 	return (NULL);
 }
 
-// int main(int argc, char **argv)
-// {
-//     if (argc == 4)
-//     {
-//         char *result_ft = ft_strnstr(NULL,"fake",3);
+/* #include <stdio.h>
 
-//         if (result_ft != NULL)
-//             printf("ft_strnstr: %s\n", result_ft);
-//     }
-//     return (0);
-// }
+int	main(void)
+{
+	printf("%s\n", ft_strnstr("ricardo", "ar", 5));
+} */

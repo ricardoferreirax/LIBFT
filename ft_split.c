@@ -6,7 +6,7 @@
 /*   By: rmedeiro <rmedeiro@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/08 23:20:17 by rmedeiro          #+#    #+#             */
-/*   Updated: 2025/04/09 09:37:14 by rmedeiro         ###   ########.fr       */
+/*   Updated: 2025/04/11 14:44:24 by rmedeiro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,24 +25,24 @@ static int	word_len(const char *str, char sep)
 static int	count_words(const char *str, char sep)
 {
 	int	i;
-	int	words;
-	int	current_word;
+	int	count;
+	int	in_word;
 
 	i = 0;
-	words = 0;
-	current_word = 0;
+	count = 0;
+	in_word = 0;
 	while (str[i] != '\0')
 	{
-		if (!current_word && ft_isprint(str[i]) && str[i] != sep)
+		if (!in_word && ft_isprint(str[i]) && str[i] != sep)
 		{
-			words++;
-			current_word = 1;
+			count++;
+			in_word = 1;
 		}
-		if (current_word && str[i] == sep)
-			current_word = 0;
+		if (in_word && str[i] == sep)
+			in_word = 0;
 		i++;
 	}
-	return (words);
+	return (count);
 }
 
 void	free_split(char **array, int current)
@@ -58,6 +58,8 @@ char	**ft_split(char const *s, char c)
 	int		i;
 	char	**array;
 
+	if (!s)
+		return (NULL);
 	words = count_words(s, c);
 	array = (char **) malloc((words + 1) * sizeof(char *));
 	if (array == NULL)
@@ -69,10 +71,7 @@ char	**ft_split(char const *s, char c)
 			s++;
 		array[i] = (char *) malloc((word_len(s, c) + 1) * sizeof(char));
 		if (array[i] == NULL)
-		{
-			free_split(array, i);
-			return (NULL);
-		}
+			return (free_split(array, i), NULL);
 		ft_strlcpy(array[i], s, word_len(s, c) + 1);
 		s += word_len(s, c) + 1;
 		i++;

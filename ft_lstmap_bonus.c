@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstmap.c                                        :+:      :+:    :+:   */
+/*   ft_lstmap_bonus.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rmedeiro <rmedeiro@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/09 00:02:45 by rmedeiro          #+#    #+#             */
-/*   Updated: 2025/04/10 11:38:42 by rmedeiro         ###   ########.fr       */
+/*   Updated: 2025/04/11 15:15:38 by rmedeiro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,15 +16,19 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
 	t_list	*new_list;
 	t_list	*node;
+	void	*failsafe;
 
-	if (!f || !lst)
+	if (!f || !lst || !del)
 		return (NULL);
 	new_list = NULL;
+	failsafe = NULL;
 	while (lst != NULL)
 	{
-		node = ft_lstnew(f(lst->content));
+		failsafe = f(lst->content);
+		node = ft_lstnew(failsafe);
 		if (node == NULL)
 		{
+			del(failsafe);
 			ft_lstclear(&new_list, del);
 			return (NULL);
 		}

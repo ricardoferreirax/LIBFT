@@ -6,7 +6,7 @@
 /*   By: rmedeiro <rmedeiro@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/08 20:42:35 by rmedeiro          #+#    #+#             */
-/*   Updated: 2025/04/09 09:35:30 by rmedeiro         ###   ########.fr       */
+/*   Updated: 2025/04/11 15:01:06 by rmedeiro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ void	ft_putendl_fd(char *s, int fd)
 	int	i;
 
 	i = 0;
+	if (!s || fd < 0)
+		return ;
 	while (s[i] != '\0')
 	{
 		write(fd, &s[i], 1);
@@ -27,6 +29,6 @@ void	ft_putendl_fd(char *s, int fd)
 
 /* int	main()
 {
-	ft_putendl_fd("hello", 1);
+	ft_putendl_fd(NULL, 1);
 	return (0);
 } */

@@ -6,7 +6,7 @@
 /*   By: rmedeiro <rmedeiro@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/08 14:58:14 by rmedeiro          #+#    #+#             */
-/*   Updated: 2025/04/10 11:08:56 by rmedeiro         ###   ########.fr       */
+/*   Updated: 2025/04/10 12:27:05 by rmedeiro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,11 +64,12 @@ char	*ft_itoa(int n)
 
 /* #include <stdio.h>
 
-int main()
+int main (void)
 {
-	printf("%s\n", ft_itoa(42));
-	printf("%s\n", ft_itoa(-2147483648));
-	printf("%s\n", ft_itoa (2147483647));
+	int	n;
 
-	return (0);
+	n = 234;
+	printf("lenght of the number: %i\n", count_digits(n));
+	printf("original number: %i\n", n);
+	printf("char number: %s\n", ft_itoa(n));
 } */

@@ -6,7 +6,7 @@
 /*   By: rmedeiro <rmedeiro@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/08 20:44:04 by rmedeiro          #+#    #+#             */
-/*   Updated: 2025/04/09 09:35:36 by rmedeiro         ###   ########.fr       */
+/*   Updated: 2025/04/11 15:01:46 by rmedeiro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 
 void	ft_putnbr_fd(int n, int fd)
 {
+	if (fd < 0)
+		return ;
 	if (n == -2147483648)
 		ft_putstr_fd("-2147483648", fd);
 	else if (n < 0)
