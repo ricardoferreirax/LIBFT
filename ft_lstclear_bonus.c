@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstclear.c                                      :+:      :+:    :+:   */
+/*   ft_lstclear_bonus.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rmedeiro <rmedeiro@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/09 00:00:55 by rmedeiro          #+#    #+#             */
-/*   Updated: 2025/04/10 11:37:19 by rmedeiro         ###   ########.fr       */
+/*   Updated: 2025/04/12 14:08:05 by rmedeiro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,28 +14,21 @@
 
 void	ft_lstclear(t_list **lst, void (*del)(void*))
 {
-	t_list	*current;
-	t_list	*next;
+	t_list	*buffer;
 
 	if (!lst || !del)
 		return ;
-	current = *lst;
-	while (current != NULL)
+	while (*lst != NULL)
 	{
-		next = current->next;
-		(*del)(current->content);
-		free(current);
-		current = next;
+		buffer = (*lst)->next;
+		del((*lst)->content);
+		free(*lst);
+		(*lst) = buffer;
 	}
 	*lst = NULL;
 }
 
-/* void delete_lst(void *content)
-{
-	free(content);
-}
-
-int	main(void)
+/* int main(void)
 {
 	t_list *node1 = malloc(sizeof(t_list));
 	t_list *node2 = malloc(sizeof(t_list));
@@ -48,10 +41,13 @@ int	main(void)
 	node2->content = strdup("World");
 	node3->content = strdup("42");
 
-	node1->next = node2;
-	node2->next = node3;
-	node3->next = NULL;
+	node3->next = node2;
+	node2->next = node1;
+	node1->next = NULL;
 
-	printf("Before free: %s\n", (char *)node2->content);
-	ft_lstclear(&node1, &delete_lst);
+	printf("Before clear: %s\n", (char *)node2->content);
+	ft_lstclear(&node3, &free);
+	printf("After clearing list\n");
+
+	return (0);
 } */

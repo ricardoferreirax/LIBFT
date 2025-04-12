@@ -6,7 +6,7 @@
 /*   By: rmedeiro <rmedeiro@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/08 23:45:30 by rmedeiro          #+#    #+#             */
-/*   Updated: 2025/04/10 11:43:54 by rmedeiro         ###   ########.fr       */
+/*   Updated: 2025/04/12 21:43:31 by rmedeiro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,14 @@
 
 static int	is_in_set(const char *set, char c)
 {
-	int	i;
+	int	idx;
 
-	i = 0;
-	while (set[i])
+	idx = 0;
+	while (set[idx])
 	{
-		if (set[i] == c)
+		if (set[idx] == c)
 			return (1);
-		i++;
+		idx++;
 	}
 	return (0);
 }
@@ -42,14 +42,14 @@ static int	get_end(const char *s1, const char *set)
 
 static int	get_start(const char *s1, const char *set)
 {
-	int	i;
+	int	idx;
 
-	i = 0;
-	while (s1[i])
+	idx = 0;
+	while (s1[idx])
 	{
-		if (!is_in_set(set, s1[i]))
-			return (i);
-		i++;
+		if (!is_in_set(set, s1[idx]))
+			return (idx);
+		idx++;
 	}
 	return (0);
 }
@@ -58,7 +58,7 @@ char	*ft_strtrim(const char *s1, const char *set)
 {
 	size_t	start;
 	size_t	end;
-	size_t	i;
+	size_t	idx;
 	char	*str;
 
 	if (!s1 || !set)
@@ -70,22 +70,20 @@ char	*ft_strtrim(const char *s1, const char *set)
 	str = (char *)malloc(sizeof(char) * (end - start + 1));
 	if (!str)
 		return (NULL);
-	i = 0;
+	idx = 0;
 	while (start < end)
 	{
-		str[i] = s1[start];
-		i++;
+		str[idx] = s1[start];
+		idx++;
 		start++;
 	}
-	str[i] = '\0';
+	str[idx] = '\0';
 	return (str);
 }
 
-/* int main(int argc, char **argv)
+/* #include <stdio.h>
+
+int	main(void)
 {
-	if (argc == 3)
-	{
-		printf("ft_strtrim: %s\n", ft_strtrim(argv[1], argv[2]));
-	}
-	return (0);
+	printf("String trimmed: %s\n", ft_strtrim("xxHexxlloxx", "xx"));
 } */

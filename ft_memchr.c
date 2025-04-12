@@ -6,7 +6,7 @@
 /*   By: rmedeiro <rmedeiro@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/08 22:41:47 by rmedeiro          #+#    #+#             */
-/*   Updated: 2025/04/09 09:34:57 by rmedeiro         ###   ########.fr       */
+/*   Updated: 2025/04/12 13:39:25 by rmedeiro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,27 +15,24 @@
 void	*ft_memchr(const void *s, int c, size_t n)
 {
 	unsigned char	*str;
-	size_t			i;
+	size_t			idx;
 
 	str = (unsigned char *)s;
-	i = 0;
-	while (i < n)
+	idx = 0;
+	while (idx < n)
 	{
-		if (str[i] == (unsigned char)c)
-			return ((void *)(str + i));
-		i++;
+		if (str[idx] == (unsigned char)c)
+			return ((void *)(str + idx));
+		idx++;
 	}
 	return (NULL);
 }
 
-/* 
-int main()
+
+/* int main()
 {
-	size_t n = 2;
-	int c = 'e';
-	const char str_memchr[10]= "Hello";
+	char str_memchr[10]= "Hello";
 	
-	printf("ft_memchr: %p\n", ft_memchr(str_memchr, c, n));
-	printf("memchr: %p\n", memchr(str_memchr, c, n));
-}
-*/
+	printf("ft_memchr: %p\n", ft_memchr(str_memchr, 'e', 2));
+	printf("memchr: %p\n", memchr(str_memchr, 'e', 2));
+} */

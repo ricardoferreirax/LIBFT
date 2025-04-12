@@ -6,7 +6,7 @@
 /*   By: rmedeiro <rmedeiro@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/08 23:20:17 by rmedeiro          #+#    #+#             */
-/*   Updated: 2025/04/11 14:44:24 by rmedeiro         ###   ########.fr       */
+/*   Updated: 2025/04/12 16:03:18 by rmedeiro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,33 +14,33 @@
 
 static int	word_len(const char *str, char sep)
 {
-	int	i;
+	int	idx;
 
-	i = 0;
-	while (str[i] != sep && str[i] != '\0')
-		i++;
-	return (i);
+	idx = 0;
+	while (str[idx] != sep && str[idx] != '\0')
+		idx++;
+	return (idx);
 }
 
-static int	count_words(const char *str, char sep)
+static int count_words(const char *str, char sep)
 {
-	int	i;
-	int	count;
-	int	in_word;
+	int idx;
+	int count;
+	int in_word;
 
-	i = 0;
+	idx = 0,
 	count = 0;
 	in_word = 0;
-	while (str[i] != '\0')
+	while (str[idx] != '\0')
 	{
-		if (!in_word && ft_isprint(str[i]) && str[i] != sep)
+		if (str[idx] != sep && in_word == 0)
 		{
 			count++;
 			in_word = 1;
 		}
-		if (in_word && str[i] == sep)
+		if (str[idx] == sep)
 			in_word = 0;
-		i++;
+		idx++;
 	}
 	return (count);
 }
@@ -55,7 +55,7 @@ void	free_split(char **array, int current)
 char	**ft_split(char const *s, char c)
 {
 	int		words;
-	int		i;
+	int		idx;
 	char	**array;
 
 	if (!s)
@@ -64,18 +64,43 @@ char	**ft_split(char const *s, char c)
 	array = (char **) malloc((words + 1) * sizeof(char *));
 	if (array == NULL)
 		return (NULL);
-	i = 0;
-	while (i < words)
+	idx = 0;
+	while (idx < words)
 	{
 		while (*s == c)
 			s++;
-		array[i] = (char *) malloc((word_len(s, c) + 1) * sizeof(char));
-		if (array[i] == NULL)
-			return (free_split(array, i), NULL);
-		ft_strlcpy(array[i], s, word_len(s, c) + 1);
+		array[idx] = (char *) malloc((word_len(s, c) + 1) * sizeof(char));
+		if (array[idx] == NULL)
+			return (free_split(array, idx), NULL);
+		ft_strlcpy(array[idx], s, word_len(s, c) + 1);
 		s += word_len(s, c) + 1;
-		i++;
+		idx++;
 	}
-	array[i] = NULL;
+	array[idx] = NULL;
 	return (array);
 }
+
+/* #include <stdio.h>
+
+int main(void)
+{
+    char const *str_split = "Hello World";
+    char sep_split = ' ';
+    char **result_split = ft_split(str_split, sep_split);
+
+    int i = 0;
+	int j = 0;
+    while (result_split[i])
+    {
+        printf("Print: %s\n", result_split[i]);
+        i++;
+    }
+    while (result_split[j])
+    {
+        free(result_split[j]);
+        j++;
+    }
+    free(result_split);
+    return (0);
+}
+ */

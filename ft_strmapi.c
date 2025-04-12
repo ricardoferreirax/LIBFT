@@ -6,7 +6,7 @@
 /*   By: rmedeiro <rmedeiro@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/08 23:34:49 by rmedeiro          #+#    #+#             */
-/*   Updated: 2025/04/11 11:17:49 by rmedeiro         ###   ########.fr       */
+/*   Updated: 2025/04/12 17:22:24 by rmedeiro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,35 +15,38 @@
 char	*ft_strmapi(char const *s, char (*f) (unsigned int, char))
 {
 	char			*buffer;
-	unsigned int	i;
+	unsigned int	idx;
 
 	if (!s || !f)
 		return (NULL);
-	buffer = (char *)malloc((ft_strlen(s) + 1) * sizeof(char));
+	buffer = malloc((ft_strlen(s) + 1) * sizeof(char));
 	if (!buffer)
 		return (NULL);
-	i = 0;
-	while (s[i] != '\0')
+	idx = 0;
+	while (s[idx] != '\0')
 	{
-		buffer[i] = f(i, s[i]);
-		i++;
+		buffer[idx] = f(idx, s[idx]);
+		idx++;
 	}
-	buffer[i] = '\0';
+	buffer[idx] = '\0';
 	return (buffer);
 }
 
-/* char function_f_mapi(unsigned int i, char c)
+/* #include <stdio.h>
+
+char	ft_ctoupper(unsigned int index, char c)
 {
-        (void)i;
-        return(c + 1);
+	if (c >= 'a' && c <= 'z')
+		c -= 32;
+	index *= 1;
+	return (c);
 }
 
-int main()
+int	main(void)
 {
-    char *str_strmapi = "Hello, World!";
-    char *result_strmapi = ft_strmapi(str_strmapi, function_f_mapi);
-    
-    printf("Origial: %s\n", str_strmapi);
-    printf("New: %s\n", result_strmapi);
-    free(result_strmapi);
+	char str[] = "abcdefg";
+
+	printf("Before: %s\n", str);
+	printf("After: %s\n", ft_strmapi(str, ft_ctoupper));
+	return (0);
 } */

@@ -6,7 +6,7 @@
 /*   By: rmedeiro <rmedeiro@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/08 22:23:14 by rmedeiro          #+#    #+#             */
-/*   Updated: 2025/04/09 09:38:43 by rmedeiro         ###   ########.fr       */
+/*   Updated: 2025/04/12 21:55:53 by rmedeiro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,8 @@ int	ft_toupper(int c)
 	return (c);
 }
 
-/* int main(int argc, char **argv)
+/* int main()
 {
-	if (argc < 2)
-		return (0);
-	printf("ft_toupper(%c): %c\n", argv[1][0], ft_toupper(argv[1][0]));
-	return (0);
+	char c = 'C';
+	printf(" %d\n", ft_toupper(c));
 } */

@@ -6,7 +6,7 @@
 /*   By: rmedeiro <rmedeiro@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/08 22:21:10 by rmedeiro          #+#    #+#             */
-/*   Updated: 2025/04/11 15:09:33 by rmedeiro         ###   ########.fr       */
+/*   Updated: 2025/04/12 14:45:29 by rmedeiro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,26 +14,17 @@
 
 void	ft_putstr_fd(char *s, int fd)
 {
-	int	i;
+	int	idx;
 
 	if (!s || fd < 0)
 		return ;
-	i = 0;
-	while (s[i] != '\0')
-	{
-		write(fd, &s[i], 1);
-		i++;
-	}
+	idx = 0;
+	while (s[idx] != '\0')
+		write(fd, &s[idx++], 1);
 }
 
-/* int	main(int argc, char **argv)
+/* int	main()
 {
-    if (argc == 2)
-    {
-        if (argv[1] != NULL)
-            ft_putstr_fd(argv[1], 1);
-    }
-    write (1, "\n", 1);
-
-    return (0);
+	ft_putstr_fd("Hello", 1);
+	return (0);
 } */

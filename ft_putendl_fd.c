@@ -6,7 +6,7 @@
 /*   By: rmedeiro <rmedeiro@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/08 20:42:35 by rmedeiro          #+#    #+#             */
-/*   Updated: 2025/04/11 15:01:06 by rmedeiro         ###   ########.fr       */
+/*   Updated: 2025/04/12 14:42:05 by rmedeiro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,21 +14,18 @@
 
 void	ft_putendl_fd(char *s, int fd)
 {
-	int	i;
+	int	idx;
 
-	i = 0;
+	idx = 0;
 	if (!s || fd < 0)
 		return ;
-	while (s[i] != '\0')
-	{
-		write(fd, &s[i], 1);
-		i++;
-	}
+	while (s[idx] != '\0')
+		write(fd, &s[idx++], 1);
 	write(fd, "\n", 1);
 }
 
 /* int	main()
 {
-	ft_putendl_fd(NULL, 1);
+	ft_putendl_fd("Hello", 1);
 	return (0);
 } */

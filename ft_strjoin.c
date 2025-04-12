@@ -6,7 +6,7 @@
 /*   By: rmedeiro <rmedeiro@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/08 23:22:41 by rmedeiro          #+#    #+#             */
-/*   Updated: 2025/04/11 11:09:55 by rmedeiro         ###   ########.fr       */
+/*   Updated: 2025/04/12 16:46:41 by rmedeiro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,38 +14,42 @@
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {
-	char	*buffer;
-	size_t	i;
-	size_t	j;
+	char	*dest;
+	size_t	idx;
+	size_t	idx2;
 
 	if (!s1 || !s2)
 		return (NULL);
-	buffer = malloc(sizeof(char) * (ft_strlen(s1) + ft_strlen(s2) + 1));
-	if (!buffer)
+	dest = malloc(sizeof(char) * (ft_strlen(s1) + ft_strlen(s2) + 1));
+	if (!dest)
 		return (NULL);
-	i = 0;
-	while (s1[i])
+	idx = 0;
+	while (s1[idx])
 	{
-		buffer[i] = s1[i];
-		i++;
+		dest[idx] = s1[idx];
+		idx++;
 	}
-	j = 0;
-	while (s2[j])
+	idx2 = 0;
+	while (s2[idx2])
 	{
-		buffer[i + j] = s2[j];
-		j++;
+		dest[idx + idx2] = s2[idx2];
+		idx2++;
 	}
-	buffer[i + j] = '\0';
-	return (buffer);
+	dest[idx + idx2] = '\0';
+	return (dest);
 }
 
-/* int main(int argc, char **argv)
+
+/* #include <stdio.h>
+
+int	main(void)
 {
-	if (argc == 3)
-	{
-		printf("Original string: %s\n", argv[1]);
-		printf("Original string: %s\n", argv[2]);
-		printf("Joined string: %s\n", ft_strjoin(argv[1], argv[2]));
-	}
+	char *s1 = "We Are ";
+	char *s2 = "The Champions!";
+
+	printf("s1: %s\n", s1);
+	printf("s2: %s\n", s2);
+	printf("ft_strjoin: %s\n", ft_strjoin(s1, s2));
+
 	return (0);
 } */

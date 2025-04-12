@@ -6,7 +6,7 @@
 /*   By: rmedeiro <rmedeiro@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/08 23:17:38 by rmedeiro          #+#    #+#             */
-/*   Updated: 2025/04/09 09:37:26 by rmedeiro         ###   ########.fr       */
+/*   Updated: 2025/04/12 16:34:26 by rmedeiro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,28 +15,32 @@
 char	*ft_strdup(const char *s)
 {
 	char	*dest;
-	int		i;
+	int		idx;
 
-	i = 0;
+	idx = 0;
 	dest = malloc((ft_strlen(s) + 1) * sizeof(char));
 	if (!dest)
 		return (NULL);
-	while (s[i] != '\0')
+	while (s[idx] != '\0')
 	{
-		dest[i] = s[i];
-		i++;
+		dest[idx] = s[idx];
+		idx++;
 	}
-	dest[i] = '\0';
+	dest[idx] = '\0';
 	return (dest);
 }
 
 /* int main()
 {
-	char *dest = "Hello";
+	char *my_dest = "Hello";
+	char *orig_dest = "Hello";
 	char *src = "World";
-	printf("dst string original: %s\n", dest);
-	printf("src string original; %s\n", src);
-	dest = ft_strdup(src);
-	printf("dst string final: %s\n", dest);
-	free(dest);
+	my_dest = ft_strdup(src);
+	orig_dest = strdup(src);
+	printf("ft_strdup: %s\n", my_dest);
+	printf("strdup: %s\n", orig_dest);
+	free(my_dest);
+	free(orig_dest);
+	
+	return (0);
 } */

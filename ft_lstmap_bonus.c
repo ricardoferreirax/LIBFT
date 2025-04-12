@@ -6,7 +6,7 @@
 /*   By: rmedeiro <rmedeiro@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/09 00:02:45 by rmedeiro          #+#    #+#             */
-/*   Updated: 2025/04/11 15:15:38 by rmedeiro         ###   ########.fr       */
+/*   Updated: 2025/04/12 14:32:43 by rmedeiro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,21 +14,21 @@
 
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
-	t_list	*new_list;
 	t_list	*node;
-	void	*failsafe;
+	t_list	*new_list;
+	void	*new_content;
 
-	if (!f || !lst || !del)
+	if (!lst || !f || !del)
 		return (NULL);
 	new_list = NULL;
-	failsafe = NULL;
+	new_content = NULL;
 	while (lst != NULL)
 	{
-		failsafe = f(lst->content);
-		node = ft_lstnew(failsafe);
+		new_content = f(lst->content);
+		node = ft_lstnew(new_content);
 		if (node == NULL)
 		{
-			del(failsafe);
+			del(new_content);
 			ft_lstclear(&new_list, del);
 			return (NULL);
 		}
@@ -38,43 +38,30 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 	return (new_list);
 }
 
-/* void *iterate(void *content)
+/* void *ft_strdup_wrapper(void *content)
 {
-    int *num = (int *)content;
-    return (num);
-}
-    
-void del_int(void *content)
-{
-    free(content);
+    return ft_strdup((char *)content); 
 }
 
-int main()
+int main(void)
 {
-    int content1 = 22;
-    int content2 = 32;
-    int content3 = 42;
+    t_list *list = NULL;
+    t_list *node1 = ft_lstnew(strdup("1"));
+    t_list *node2 = ft_lstnew(strdup("2"));
+    t_list *node3 = ft_lstnew(strdup("3"));
 
-    t_list *elem1 = ft_lstnew(&content1);
-    t_list *elem2 = ft_lstnew(&content2);
-    t_list *elem3 = ft_lstnew(&content3);
+    ft_lstadd_back(&list, node1);
+    ft_lstadd_back(&list, node2);
+    ft_lstadd_back(&list, node3);
 
-    elem1->next = elem2;
-    elem2->next = elem3;
-    elem3->next = NULL;
+    t_list *new_list = ft_lstmap(list, ft_strdup_wrapper, free);
 
-    t_list *mapped_list = ft_lstmap(elem1, &iterate, &del_int);
-
-    while (mapped_list != NULL)
+    while (new_list != NULL)
     {
-        printf("%d\n", *(int *)(mapped_list->content));
-        mapped_list = mapped_list->next;
+        printf("%s\n", (char *)new_list->content);
+        new_list = new_list->next;
     }
-    
-    ft_lstclear(&elem1, &del_int);
-    ft_lstclear(&mapped_list, &del_int);
-	free(elem1);
-	free(elem2);
-	free(elem3);
+    ft_lstclear(&list, free);
+
     return 0;
 } */

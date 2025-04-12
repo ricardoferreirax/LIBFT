@@ -6,7 +6,7 @@
 /*   By: rmedeiro <rmedeiro@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/08 23:34:08 by rmedeiro          #+#    #+#             */
-/*   Updated: 2025/04/09 09:37:58 by rmedeiro         ###   ########.fr       */
+/*   Updated: 2025/04/12 17:18:12 by rmedeiro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,18 +14,18 @@
 
 size_t	ft_strlen(const char *s)
 {
-	size_t	i;
+	size_t	idx;
 
-	i = 0;
-	while (s[i])
-		i++;
-	return (i);
+	idx = 0;
+	while (s[idx] != '\0')
+		idx++;
+	return (idx);
 }
 
 /* int main()
 {
 	char *str;
 	str = "Hello";
-	printf("ft_strlen: %lu\n", ft_strlen(str));
-	printf("strlen: %lu\n", strlen(str));
+	printf("ft_strlen: %ld\n", ft_strlen(str));
+	printf("strlen: %ld\n", strlen(str));
 } */

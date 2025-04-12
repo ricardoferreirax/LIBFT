@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstdelone.c                                     :+:      :+:    :+:   */
+/*   ft_lstdelone_bonus.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rmedeiro <rmedeiro@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/09 00:01:36 by rmedeiro          #+#    #+#             */
-/*   Updated: 2025/04/09 15:01:05 by rmedeiro         ###   ########.fr       */
+/*   Updated: 2025/04/12 14:09:44 by rmedeiro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,41 +14,23 @@
 
 void	ft_lstdelone(t_list *lst, void (*del)(void *))
 {
-	if (!lst || !del)
+	if (!lst)
 		return ;
-	(*del)(lst->content);
+	del(lst->content);
 	free(lst);
 }
 
-/* void    delete_lst(void *content)
+/* int main(void)
 {
-	free(content);
-}
-
-int main(void)
-{
-	t_list *node1 = malloc(sizeof(t_list));
-	t_list *node2 = malloc(sizeof(t_list));
-	t_list *node3 = malloc(sizeof(t_list));
-
-	if (!node1 || !node2 || !node3)
+	t_list *node = malloc(sizeof(t_list));
+	if (!node)
 		return (1);
+	node->content = strdup("Hello");
+	node->next = NULL;
 
-	node1->content = strdup("Hello");
-	node2->content = strdup("World");
-	node3->content = strdup("42");
-
-	node3->next = node2;
-	node2->next = node1;
-	node1->next = NULL;
-
-	printf("Before free: %s\n", (char *)node2->content);
-	ft_lstdelone(node1, &delete_lst);
-	printf("After deleting node1, node3 content: %s\n", (char *)node3->content);
-
-	ft_lstdelone(node2, &delete_lst);
-	ft_lstdelone(node3, &delete_lst);
+	printf("Before deletion: %s\n", (char *)node->content);
+	ft_lstdelone(node, &free);
+	printf("After deletion\n");
 
 	return (0);
-}
- */
+} */
