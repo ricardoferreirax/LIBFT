@@ -6,7 +6,7 @@
 /*   By: rmedeiro <rmedeiro@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/08 23:39:32 by rmedeiro          #+#    #+#             */
-/*   Updated: 2025/04/12 20:32:27 by rmedeiro         ###   ########.fr       */
+/*   Updated: 2025/04/13 14:48:24 by rmedeiro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 	size_t	idx;
 	size_t	start;
 
-	if (little[0] == '\0')
+	if (*little == '\0')
 		return ((char *)big);
 	start = 0;
 	while (start < len && big[start] != '\0')

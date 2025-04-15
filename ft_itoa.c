@@ -6,29 +6,22 @@
 /*   By: rmedeiro <rmedeiro@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/08 14:58:14 by rmedeiro          #+#    #+#             */
-/*   Updated: 2025/04/12 13:56:10 by rmedeiro         ###   ########.fr       */
+/*   Updated: 2025/04/13 12:08:50 by rmedeiro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	numlen(int num)
+int	numlen(long int nb)
 {
 	int			len;
-	long int	n;
 
-	n = num;
 	len = 0;
-	if (n == 0)
-		return (1);
-	if (n < 0)
-	{
-		n = -n;
+	if (nb <= 0)
 		len++;
-	}
-	while (n > 0)
+	while (nb > 0)
 	{
-		n = n / 10;
+		nb = nb / 10;
 		len++;
 	}
 	return (len);
@@ -36,9 +29,9 @@ static int	numlen(int num)
 
 char	*ft_itoa(int n)
 {
+	long int	num;
 	int			size;
 	char		*res;
-	long int	num;
 
 	num = n;
 	size = numlen(n);
@@ -52,11 +45,10 @@ char	*ft_itoa(int n)
 		res[0] = '-';
 		num = -num;
 	}
-	res[size--] = '\0';
-	while (size >= 0 && num > 0)
+	res[size] = '\0';
+	while (size > 0 && num > 0)
 	{
-		res[size] = (num % 10) + '0';
-		size--;
+		res[--size] = (num % 10) + '0';
 		num = num / 10;
 	}
 	return (res);
@@ -69,7 +61,7 @@ int main (void)
 	int	n;
 
 	n = 234;
-	printf("lenght of the number: %i\n", count_digits(n));
+	printf("lenght of the number: %i\n", numlen(n));
 	printf("original number: %i\n", n);
 	printf("char number: %s\n", ft_itoa(n));
 } */

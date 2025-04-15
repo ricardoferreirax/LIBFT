@@ -6,7 +6,7 @@
 /*   By: rmedeiro <rmedeiro@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/09 00:00:55 by rmedeiro          #+#    #+#             */
-/*   Updated: 2025/04/12 14:08:05 by rmedeiro         ###   ########.fr       */
+/*   Updated: 2025/04/13 14:13:00 by rmedeiro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,16 @@
 
 void	ft_lstclear(t_list **lst, void (*del)(void*))
 {
-	t_list	*buffer;
+	t_list	*tmp;
 
 	if (!lst || !del)
 		return ;
 	while (*lst != NULL)
 	{
-		buffer = (*lst)->next;
+		tmp = (*lst)->next;
 		del((*lst)->content);
-		free(*lst);
-		(*lst) = buffer;
+		free((*lst));
+		(*lst) = tmp;
 	}
 	*lst = NULL;
 }

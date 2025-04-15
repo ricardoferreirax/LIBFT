@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstlast.c                                       :+:      :+:    :+:   */
+/*   ft_lstlast_bonus.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rmedeiro <rmedeiro@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/09 00:02:15 by rmedeiro          #+#    #+#             */
-/*   Updated: 2025/04/09 15:01:20 by rmedeiro         ###   ########.fr       */
+/*   Updated: 2025/04/13 14:14:38 by rmedeiro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,14 @@
 
 t_list	*ft_lstlast(t_list *lst)
 {
-	t_list	*buffer;
+	t_list	*tmp;
 
 	if (!lst)
 		return (NULL);
-	buffer = lst;
-	while (buffer->next != NULL)
-		buffer = buffer->next;
-	return (buffer);
+	tmp = lst;
+	while (tmp->next != NULL)
+		tmp = buffer->next;
+	return (tmp);
 }
 
 /* int main()

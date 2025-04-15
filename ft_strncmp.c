@@ -6,7 +6,7 @@
 /*   By: rmedeiro <rmedeiro@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/08 23:38:27 by rmedeiro          #+#    #+#             */
-/*   Updated: 2025/04/12 20:09:59 by rmedeiro         ###   ########.fr       */
+/*   Updated: 2025/04/13 14:47:46 by rmedeiro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,8 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 	tmp_s1 = (unsigned char *)s1;
 	tmp_s2 = (unsigned char *)s2;
 	idx = 0;
-	while (tmp_s1[idx] && tmp_s2[idx] && tmp_s1[idx] == tmp_s2[idx] && idx < n - 1)
+	while (tmp_s1[idx] && tmp_s2[idx] && tmp_s1[idx] == tmp_s2[idx] 
+			&& idx < n - 1)
 		idx++;
 	return (tmp_s1[idx] - tmp_s2[idx]);
 }

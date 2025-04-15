@@ -6,7 +6,7 @@
 /*   By: rmedeiro <rmedeiro@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/08 23:47:56 by rmedeiro          #+#    #+#             */
-/*   Updated: 2025/04/12 21:54:40 by rmedeiro         ###   ########.fr       */
+/*   Updated: 2025/04/13 20:32:29 by rmedeiro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,15 +20,15 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 
 	if (!s)
 		return (NULL);
-	s_len = (size_t)ft_strlen(s);
-	idx = 0;
+	s_len = ft_strlen(s);
+	if (start >= s_len)
+		return (ft_strdup(""));
 	if (start + len > s_len)
 		len = s_len - start;
-	if (start >= s_len)
-		len = 0;
 	buffer = malloc(sizeof(char) * (len + 1));
-	if (buffer == NULL)
+	if (!buffer)
 		return (NULL);
+	idx = 0;
 	while (idx < len && s[start + idx] != '\0')
 	{
 		buffer[idx] = s[start + idx];
@@ -38,16 +38,13 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	return (buffer);
 }
 
-/* int main() 
+/* int	main(void)
 {
-    char *original = "Hello, World!";
-    unsigned int start = 7; 
-    size_t len = 9;      
-    char *substring = ft_substr(original, start, len);
-	
-    printf("Original string: %s\n", original);
-    printf("Substring: %s\n", substring);
-    free(substring);
+	char	*str;
+	char	*substr;
 
-    return 0;
+	str = "Hello World";
+	substr = ft_substr(str, 5, 10);
+	printf("%s\n", substr);
+	free (substr);
 } */

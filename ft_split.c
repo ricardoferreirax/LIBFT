@@ -6,23 +6,13 @@
 /*   By: rmedeiro <rmedeiro@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/08 23:20:17 by rmedeiro          #+#    #+#             */
-/*   Updated: 2025/04/12 16:03:18 by rmedeiro         ###   ########.fr       */
+/*   Updated: 2025/04/15 09:56:35 by rmedeiro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	word_len(const char *str, char sep)
-{
-	int	idx;
-
-	idx = 0;
-	while (str[idx] != sep && str[idx] != '\0')
-		idx++;
-	return (idx);
-}
-
-static int count_words(const char *str, char sep)
+static int count_words(const char *s, char sep)
 {
 	int idx;
 	int count;
@@ -31,18 +21,40 @@ static int count_words(const char *str, char sep)
 	idx = 0,
 	count = 0;
 	in_word = 0;
-	while (str[idx] != '\0')
+	while (s[idx] != '\0')
 	{
-		if (str[idx] != sep && in_word == 0)
+		if (s[idx] != sep && in_word == 0)
 		{
 			count++;
 			in_word = 1;
 		}
-		if (str[idx] == sep)
+		if (s[idx] == sep)
 			in_word = 0;
 		idx++;
 	}
 	return (count);
+}
+
+static char	*malloc_words(const char **s, char sep)
+{
+	int			len;
+	char		*word;
+	const char	*str;
+
+	len = 0;
+	while (**s && **s == sep)
+		(*s)++;
+	str = (*s);
+	while (**s && **s != sep)
+	{
+		len++;
+		(*s)++;
+	}
+	word = malloc(sizeof(char) * (len + 1));
+	if (!word)
+		return (NULL);
+	ft_strlcpy(word, str, len + 1);
+	return (word);
 }
 
 void	free_split(char **array, int current)
@@ -56,51 +68,38 @@ char	**ft_split(char const *s, char c)
 {
 	int		words;
 	int		idx;
-	char	**array;
+	char	**strings;
 
 	if (!s)
 		return (NULL);
 	words = count_words(s, c);
-	array = (char **) malloc((words + 1) * sizeof(char *));
-	if (array == NULL)
+	strings = malloc((words + 1) * sizeof(char *));
+	if (!strings)
 		return (NULL);
 	idx = 0;
 	while (idx < words)
 	{
-		while (*s == c)
-			s++;
-		array[idx] = (char *) malloc((word_len(s, c) + 1) * sizeof(char));
-		if (array[idx] == NULL)
-			return (free_split(array, idx), NULL);
-		ft_strlcpy(array[idx], s, word_len(s, c) + 1);
-		s += word_len(s, c) + 1;
+		strings[idx] = malloc_words(&s, c);
+		if (!strings[idx])
+			return (free_split(strings, idx - 1), NULL);
 		idx++;
 	}
-	array[idx] = NULL;
-	return (array);
+	strings[idx] = NULL;
+	return (strings);
 }
 
-/* #include <stdio.h>
-
-int main(void)
+/* int	main(void)
 {
-    char const *str_split = "Hello World";
-    char sep_split = ' ';
-    char **result_split = ft_split(str_split, sep_split);
-
-    int i = 0;
-	int j = 0;
-    while (result_split[i])
-    {
-        printf("Print: %s\n", result_split[i]);
-        i++;
-    }
-    while (result_split[j])
-    {
-        free(result_split[j]);
-        j++;
-    }
-    free(result_split);
-    return (0);
-}
- */
+	char	**tab;
+	int		i;
+	
+	i = 0;
+	tab = ft_split("xxHelloxxWorldxx", 'x');
+	while(tab[i] != NULL)
+	{
+		printf("%s\n", tab[i]);
+		i++;
+	}
+	free_split(tab, i - 1);
+	return (0);
+} */

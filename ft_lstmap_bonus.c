@@ -6,7 +6,7 @@
 /*   By: rmedeiro <rmedeiro@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/09 00:02:45 by rmedeiro          #+#    #+#             */
-/*   Updated: 2025/04/12 14:32:43 by rmedeiro         ###   ########.fr       */
+/*   Updated: 2025/04/13 14:20:01 by rmedeiro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,28 +14,22 @@
 
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
+	t_list	*newlst;
 	t_list	*node;
-	t_list	*new_list;
-	void	*new_content;
 
-	if (!lst || !f || !del)
-		return (NULL);
-	new_list = NULL;
-	new_content = NULL;
+	newlst = NULL;
 	while (lst != NULL)
 	{
-		new_content = f(lst->content);
-		node = ft_lstnew(new_content);
+		node = ft_lstnew(f(lst->content));
 		if (node == NULL)
 		{
-			del(new_content);
-			ft_lstclear(&new_list, del);
+			ft_lstclear(&newlst, del);
 			return (NULL);
 		}
-		ft_lstadd_back(&new_list, node);
+		ft_lstadd_back(&newlst, node);
 		lst = lst->next;
 	}
-	return (new_list);
+	return (newlst);
 }
 
 /* void *ft_strdup_wrapper(void *content)

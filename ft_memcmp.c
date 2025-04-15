@@ -6,7 +6,7 @@
 /*   By: rmedeiro <rmedeiro@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/08 22:48:40 by rmedeiro          #+#    #+#             */
-/*   Updated: 2025/04/12 20:12:18 by rmedeiro         ###   ########.fr       */
+/*   Updated: 2025/04/15 10:00:57 by rmedeiro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	size_t				idx;
+	size_t			idx;
 	unsigned char		*tmp_s1;
 	unsigned char		*tmp_s2;
 
@@ -32,9 +32,9 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
     char str1[] = "Hello, world";
     char str2[] = "Helli, world";
-    int mine = ft_memcmp(str1, str2, 10);
-	int orig = memcmp(str1, str2, 10);
-    printf("ft_memcmp: %d\n", mine);
-	printf("memcmp: %d\n", orig);
+    
+	printf("ft_memcmp: %d\n", ft_memcmp(str1, str2, 5));
+	printf("memcmp: %d\n", memcmp(str1, str2, 5));
+	
 	return (0);
 } */

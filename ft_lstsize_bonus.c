@@ -6,7 +6,7 @@
 /*   By: rmedeiro <rmedeiro@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/09 00:03:41 by rmedeiro          #+#    #+#             */
-/*   Updated: 2025/04/12 14:34:33 by rmedeiro         ###   ########.fr       */
+/*   Updated: 2025/04/13 14:18:34 by rmedeiro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,19 +14,19 @@
 
 int	ft_lstsize(t_list *lst)
 {
-	int		idx;
-	t_list	*buffer;
+	int		len;
+	t_list	*tmp;
 
 	if (!lst)
 		return (0);
-	idx = 0;
-	buffer = lst;
-	while (buffer != NULL)
+	len = 0;
+	tmp = lst;
+	while (tmp != NULL)
 	{
-		buffer = buffer->next;
-		idx++;
+		tmp = tmp->next;
+		len++;
 	}
-	return (idx);
+	return (len);
 }
 
 /* int main()
