@@ -6,7 +6,7 @@
 /*   By: rmedeiro <rmedeiro@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/08 22:52:20 by rmedeiro          #+#    #+#             */
-/*   Updated: 2025/04/12 13:34:19 by rmedeiro         ###   ########.fr       */
+/*   Updated: 2025/04/16 17:42:38 by rmedeiro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,6 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 	unsigned char	*tmp_dst;
 	unsigned char	*tmp_src;
 
-	if (!dest && !src)
-		return (NULL);
 	tmp_dst = (unsigned char *)dest;
 	tmp_src = (unsigned char *)src;
 	idx = 0;

@@ -6,7 +6,7 @@
 /*   By: rmedeiro <rmedeiro@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/08 23:32:13 by rmedeiro          #+#    #+#             */
-/*   Updated: 2025/04/12 17:12:29 by rmedeiro         ###   ########.fr       */
+/*   Updated: 2025/04/17 19:15:37 by rmedeiro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,16 +18,13 @@ size_t	ft_strlcpy(char *dest, const char *src, size_t size)
 
 	if (size == 0)
 		return (ft_strlen(src));
-	if (size > 0)
+	idx = 0;
+	while (src[idx] != '\0' && (idx < size - 1))
 	{
-		idx = 0;
-		while (src[idx] != '\0' && (idx < size - 1))
-		{
-			dest[idx] = src[idx];
-			idx++;
-		}
-		dest[idx] = '\0';
+		dest[idx] = src[idx];
+		idx++;
 	}
+	dest[idx] = '\0';
 	return (ft_strlen(src));
 }
 

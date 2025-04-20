@@ -6,7 +6,7 @@
 /*   By: rmedeiro <rmedeiro@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/08 23:47:56 by rmedeiro          #+#    #+#             */
-/*   Updated: 2025/04/13 20:32:29 by rmedeiro         ###   ########.fr       */
+/*   Updated: 2025/04/19 21:43:10 by rmedeiro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,28 +14,23 @@
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	char	*buffer;
-	size_t	idx;
-	size_t	s_len;
+	char		*substring;
+	size_t		idx;
 
 	if (!s)
 		return (NULL);
-	s_len = ft_strlen(s);
-	if (start >= s_len)
+	if (start >= ft_strlen(s))
 		return (ft_strdup(""));
-	if (start + len > s_len)
-		len = s_len - start;
-	buffer = malloc(sizeof(char) * (len + 1));
-	if (!buffer)
+	if (len > ft_strlen(s) - start)
+		len = ft_strlen(s) - start;
+	substring = malloc((len + 1) * sizeof(char));
+	if (!substring)
 		return (NULL);
 	idx = 0;
-	while (idx < len && s[start + idx] != '\0')
-	{
-		buffer[idx] = s[start + idx];
-		idx++;
-	}
-	buffer[idx] = '\0';
-	return (buffer);
+	while (idx < len)
+		substring[idx++] = s[start++];
+	substring[idx] = '\0';
+	return (substring);
 }
 
 /* int	main(void)
@@ -44,7 +39,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	char	*substr;
 
 	str = "Hello World";
-	substr = ft_substr(str, 5, 10);
+	substr = ft_substr(str, 6, 10);
 	printf("%s\n", substr);
 	free (substr);
 } */

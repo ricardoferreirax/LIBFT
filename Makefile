@@ -6,15 +6,13 @@
 #    By: rmedeiro <rmedeiro@student.42lisboa.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/04/09 00:23:24 by rmedeiro          #+#    #+#              #
-#    Updated: 2025/04/11 18:09:18 by rmedeiro         ###   ########.fr        #
+#    Updated: 2025/04/20 15:53:15 by rmedeiro         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libft.a
-
 CC = cc
-CFLAGS = -Wall -Wextra -Werror -g
-
+CFLAGS = -Wall -Wextra -Werror
 RM = rm -f
 COMPRESS = ar rcs
 
@@ -34,11 +32,11 @@ OBJS_BONUS = $(BONUS_SRCS:.c=.o)
 all: $(NAME)
 
 $(NAME): $(OBJS)
-	@$(COMPRESS) $(NAME) $?
-	@echo "Library $(NAME) created successfully!"
+	@$(COMPRESS) $(NAME) $(OBJS)
+	@echo "Library $(NAME) created!"
 
-bonus: $(NAME) $(OBJS_BONUS)
-	@$(COMPRESS) $(NAME) $?
+bonus: $(OBJS) $(OBJS_BONUS)
+	@$(COMPRESS) $(NAME) $(OBJS) $(OBJS_BONUS)
 	@echo "Bonus added to $(NAME)!"
 	@touch bonus
 
@@ -49,7 +47,7 @@ clean:
 	@$(RM) $(OBJS) $(OBJS_BONUS)
 	@touch bonus
 	@rm bonus
-	@echo "Cleaned up object files."
+	@echo "Cleaned object files."
 
 fclean: clean
 	@$(RM) $(NAME)

@@ -6,7 +6,7 @@
 /*   By: rmedeiro <rmedeiro@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/08 23:20:50 by rmedeiro          #+#    #+#             */
-/*   Updated: 2025/04/12 16:38:04 by rmedeiro         ###   ########.fr       */
+/*   Updated: 2025/04/17 13:12:08 by rmedeiro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char *))
 {
 	unsigned int	idx;
 
-	if (!s)
+	if (!s || !f)
 		return ;
 	idx = 0;
 	while (s[idx] != '\0')

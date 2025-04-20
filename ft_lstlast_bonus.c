@@ -6,7 +6,7 @@
 /*   By: rmedeiro <rmedeiro@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/09 00:02:15 by rmedeiro          #+#    #+#             */
-/*   Updated: 2025/04/13 14:14:38 by rmedeiro         ###   ########.fr       */
+/*   Updated: 2025/04/16 17:42:02 by rmedeiro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ t_list	*ft_lstlast(t_list *lst)
 		return (NULL);
 	tmp = lst;
 	while (tmp->next != NULL)
-		tmp = buffer->next;
+		tmp = tmp->next;
 	return (tmp);
 }
 

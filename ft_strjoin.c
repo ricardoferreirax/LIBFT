@@ -6,7 +6,7 @@
 /*   By: rmedeiro <rmedeiro@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/08 23:22:41 by rmedeiro          #+#    #+#             */
-/*   Updated: 2025/04/13 14:41:15 by rmedeiro         ###   ########.fr       */
+/*   Updated: 2025/04/16 17:50:32 by rmedeiro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,16 +26,16 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	idx = 0;
 	while (s1[idx])
 	{
-		dest[idx] = s1[idx];
+		joined[idx] = s1[idx];
 		idx++;
 	}
 	idx2 = 0;
 	while (s2[idx2])
 	{
-		dest[idx + idx2] = s2[idx2];
+		joined[idx + idx2] = s2[idx2];
 		idx2++;
 	}
-	dest[idx + idx2] = '\0';
+	joined[idx + idx2] = '\0';
 	return (joined);
 }
 

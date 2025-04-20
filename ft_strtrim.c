@@ -6,18 +6,18 @@
 /*   By: rmedeiro <rmedeiro@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/08 23:45:30 by rmedeiro          #+#    #+#             */
-/*   Updated: 2025/04/13 15:06:00 by rmedeiro         ###   ########.fr       */
+/*   Updated: 2025/04/17 10:39:39 by rmedeiro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	is_in_set(char c, char const *set)
+static int	ft_isset(char c, const char *set)
 {
 	int	idx;
 
 	idx = 0;
-	while (set[idx])
+	while (set[idx] != '\0')
 	{
 		if (set[idx] == c)
 			return (1);
@@ -28,26 +28,24 @@ static int	is_in_set(char c, char const *set)
 
 char	*ft_strtrim(const char *s1, char const *set)
 {
-	int		start;
-	int		end;
-	int		idx;
+	size_t	idx;
+	size_t	start;
+	size_t	end;
 	char	*trimmed;
 
-	if (!s1 || !set)
-		return (NULL);
 	start = 0;
-	end = (int)ft_strlen(s1);
-	while (s1[start] != '\0' && is_in_set(s1[start], set))
+	while (s1[start] && ft_isset(s1[start], set))
 		start++;
-	while (end > start && is_in_set(s1[end - 1], set))
+	end = ft_strlen(s1);
+	while (end > start && ft_isset(s1[end - 1], set))
 		end--;
-	trimmed = malloc((end - start + 1) * sizeof(char));
+	trimmed = malloc(sizeof(char) * (end - start + 1));
 	if (!trimmed)
 		return (NULL);
 	idx = 0;
 	while (start < end)
 		trimmed[idx++] = s1[start++];
-	trimmed[start] = '\0';
+	trimmed[idx] = '\0';
 	return (trimmed);
 }
 

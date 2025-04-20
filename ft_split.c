@@ -6,7 +6,7 @@
 /*   By: rmedeiro <rmedeiro@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/08 23:20:17 by rmedeiro          #+#    #+#             */
-/*   Updated: 2025/04/15 09:56:35 by rmedeiro         ###   ########.fr       */
+/*   Updated: 2025/04/16 17:51:37 by rmedeiro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ static int count_words(const char *s, char sep)
 	int count;
 	int in_word;
 
-	idx = 0,
+	idx = 0;
 	count = 0;
 	in_word = 0;
 	while (s[idx] != '\0')
