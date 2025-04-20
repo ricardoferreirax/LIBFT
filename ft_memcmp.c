@@ -6,7 +6,7 @@
 /*   By: rmedeiro <rmedeiro@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/08 22:48:40 by rmedeiro          #+#    #+#             */
-/*   Updated: 2025/04/15 10:00:57 by rmedeiro         ###   ########.fr       */
+/*   Updated: 2025/04/20 16:49:19 by rmedeiro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	size_t			idx;
+	size_t				idx;
 	unsigned char		*tmp_s1;
 	unsigned char		*tmp_s2;
 

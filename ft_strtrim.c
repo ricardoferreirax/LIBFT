@@ -6,7 +6,7 @@
 /*   By: rmedeiro <rmedeiro@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/08 23:45:30 by rmedeiro          #+#    #+#             */
-/*   Updated: 2025/04/17 10:39:39 by rmedeiro         ###   ########.fr       */
+/*   Updated: 2025/04/20 16:48:41 by rmedeiro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,8 @@ char	*ft_strtrim(const char *s1, char const *set)
 	size_t	end;
 	char	*trimmed;
 
+	if (!s1 || !set)
+		return (NULL);
 	start = 0;
 	while (s1[start] && ft_isset(s1[start], set))
 		start++;

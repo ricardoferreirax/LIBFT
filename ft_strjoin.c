@@ -6,7 +6,7 @@
 /*   By: rmedeiro <rmedeiro@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/08 23:22:41 by rmedeiro          #+#    #+#             */
-/*   Updated: 2025/04/16 17:50:32 by rmedeiro         ###   ########.fr       */
+/*   Updated: 2025/04/20 16:39:52 by rmedeiro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,6 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	joined[idx + idx2] = '\0';
 	return (joined);
 }
-
 
 /* #include <stdio.h>
 

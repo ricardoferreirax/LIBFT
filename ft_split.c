@@ -6,17 +6,17 @@
 /*   By: rmedeiro <rmedeiro@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/08 23:20:17 by rmedeiro          #+#    #+#             */
-/*   Updated: 2025/04/16 17:51:37 by rmedeiro         ###   ########.fr       */
+/*   Updated: 2025/04/20 16:48:17 by rmedeiro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int count_words(const char *s, char sep)
+static int	count_words(const char *s, char sep)
 {
-	int idx;
-	int count;
-	int in_word;
+	int	idx;
+	int	count;
+	int	in_word;
 
 	idx = 0;
 	count = 0;

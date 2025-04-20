@@ -6,7 +6,7 @@
 /*   By: rmedeiro <rmedeiro@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/09 00:02:45 by rmedeiro          #+#    #+#             */
-/*   Updated: 2025/04/17 19:27:09 by rmedeiro         ###   ########.fr       */
+/*   Updated: 2025/04/20 16:52:38 by rmedeiro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 	t_list	*newlst;
 	t_list	*tmp;
 
-	if (!f || !lst)
+	if (!f || !lst || !del)
 		return (NULL);
 	newlst = NULL;
 	while (lst != NULL)

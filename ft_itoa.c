@@ -6,7 +6,7 @@
 /*   By: rmedeiro <rmedeiro@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/08 14:58:14 by rmedeiro          #+#    #+#             */
-/*   Updated: 2025/04/17 12:58:54 by rmedeiro         ###   ########.fr       */
+/*   Updated: 2025/04/20 16:50:00 by rmedeiro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 static int	numberlen(int num)
 {
 	int			len;
-	long	n;
+	long		n;
 
 	n = num;
 	len = 0;
@@ -38,7 +38,7 @@ char	*ft_itoa(int n)
 {
 	int			len;
 	char		*number;
-	long	nbr;
+	long		nbr;
 
 	nbr = n;
 	len = numberlen(nbr);

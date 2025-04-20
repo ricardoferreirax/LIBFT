@@ -6,7 +6,7 @@
 /*   By: rmedeiro <rmedeiro@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/08 22:41:47 by rmedeiro          #+#    #+#             */
-/*   Updated: 2025/04/17 13:05:36 by rmedeiro         ###   ########.fr       */
+/*   Updated: 2025/04/20 16:26:09 by rmedeiro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	*ft_memchr(const void *s, int c, size_t n)
 {
 	const unsigned char	*tmp_s;
-	size_t			idx;
+	size_t				idx;
 
 	tmp_s = (const unsigned char *)s;
 	idx = 0;
