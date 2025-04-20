@@ -6,7 +6,7 @@
 /*   By: rmedeiro <rmedeiro@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/08 14:54:33 by rmedeiro          #+#    #+#             */
-/*   Updated: 2025/04/09 09:34:46 by rmedeiro         ###   ########.fr       */
+/*   Updated: 2025/04/20 17:38:35 by rmedeiro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,3 +18,17 @@ int	ft_isprint(int c)
 		return (1);
 	return (0);
 }
+
+/* #include <stdio.h>
+
+int main()
+{
+	printf("'a': %d\n", ft_isprint('a'));
+	printf("'1': %d\n", ft_isprint('1'));
+	printf("'B': %d\n", ft_isprint('B'));
+	printf("'!': %d\n", ft_isprint('!'));
+	printf("'\\n': %d\n", ft_isprint('\n'));
+	printf("140: %d\n", ft_isprint(140));
+
+	return (0);
+} */

@@ -6,7 +6,7 @@
 /*   By: rmedeiro <rmedeiro@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/08 23:43:29 by rmedeiro          #+#    #+#             */
-/*   Updated: 2025/04/17 13:20:42 by rmedeiro         ###   ########.fr       */
+/*   Updated: 2025/04/20 19:48:13 by rmedeiro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,8 +34,19 @@ char	*ft_strrchr(const char *s, int c)
 
 int	main(void)
 {
-	printf("ft_strrchr: %s\n", ft_strrchr("Hello World", 'o'));
-	printf("strrchr: %s\n", strrchr("Hello World", 'o'));
+	printf("ft_strrchr: %s\n", ft_strrchr("Hello World!", 'o'));
+	printf("strrchr: %s\n\n", strrchr("Hello World!", 'o'));
+	
+	printf("ft_strrchr: %s\n", ft_strrchr("Hello World!", ' '));
+	printf("strrchr: %s\n\n", strrchr("Hello World!", ' '));
+
+	printf("ft_strrchr: %s\n", ft_strrchr("Hello World!", 'l'));
+	printf("strrchr: %s\n\n", strrchr("Hello World!", 'l'));
+
+	printf("ft_strrchr: %s\n", ft_strrchr("Hello World!", '\0'));
+	printf("strrchr: %s\n", strrchr("Hello World!", '\0'));
+
+	// printf("\t%s\n", ft_strrchr(NULL, '!'));
 
 	return (0);
 } */

@@ -6,7 +6,7 @@
 /*   By: rmedeiro <rmedeiro@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/08 23:12:17 by rmedeiro          #+#    #+#             */
-/*   Updated: 2025/04/13 14:25:00 by rmedeiro         ###   ########.fr       */
+/*   Updated: 2025/04/20 18:33:25 by rmedeiro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,10 +26,18 @@ void	*ft_memset(void *s, int c, size_t n)
 
 /* int main() 
 {
-    char str[] = "Hello World!";
-	char *mine = ft_memset(str, 'X', 5);
-	char *orig = memset(str, 'X', 5);
-    printf("After ft_memset: %s\n", mine); 
-    printf("After memset: %s\n", orig);
+	char a[] = "Hello, World!";
+	
+    printf("ft_memset: %s\n", (char *)ft_memset(a, 'e', 1));
+    printf("memset: %s\n\n", (char *)memset(a, 'e', 1));
+	
+	printf("ft_memset: %s\n", (char *)ft_memset(a, 'o', 10));
+	printf("memset: %s\n\n", (char *)memset(a, 'o', 10));
+	
+	printf("ft_memset: %s\n", (char *)ft_memset(a, ' ', 4));
+	printf("memset: %s\n", (char *)memset(a, ' ', 4));
+
+	// printf("\t%s\n", (char *)ft_memset(a, 'a', 500));
+	// printf("\t%s\n", (char *)ft_memset(NULL, 'a', 1));
     return (0);
 } */

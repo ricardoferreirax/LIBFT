@@ -6,7 +6,7 @@
 /*   By: rmedeiro <rmedeiro@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/08 14:33:58 by rmedeiro          #+#    #+#             */
-/*   Updated: 2025/04/09 09:34:24 by rmedeiro         ###   ########.fr       */
+/*   Updated: 2025/04/20 17:31:55 by rmedeiro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,10 +22,14 @@ int	ft_isalnum(int c)
 
 /* #include <stdio.h>
 
-int main(int argc, char **argv)
+int main()
 {
-	if (argc < 2)
-		return (1);
-	printf("ft_isalnum(%c): %i\n", argv[1][0], ft_isalnum(argv[1][0]));
+	printf("'a': %d\n", ft_isalnum('a'));
+	printf("'1': %d\n", ft_isalnum('1'));
+	printf("'B': %d\n", ft_isalnum('B'));
+	printf("'!': %d\n", ft_isalnum('!'));
+	printf("'\n': %d\n", ft_isalnum('\n'));
+	printf("140: %d\n", ft_isalnum(140));
+
 	return (0);
 } */

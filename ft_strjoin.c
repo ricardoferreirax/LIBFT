@@ -6,7 +6,7 @@
 /*   By: rmedeiro <rmedeiro@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/08 23:22:41 by rmedeiro          #+#    #+#             */
-/*   Updated: 2025/04/20 16:39:52 by rmedeiro         ###   ########.fr       */
+/*   Updated: 2025/04/20 18:46:34 by rmedeiro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,12 +43,26 @@ char	*ft_strjoin(char const *s1, char const *s2)
 
 int	main(void)
 {
-	char *s1 = "We Are ";
-	char *s2 = "The Champions!";
-
-	printf("s1: %s\n", s1);
-	printf("s2: %s\n", s2);
-	printf("ft_strjoin: %s\n", ft_strjoin(s1, s2));
+	char *a;
+	
+	a = ft_strjoin("We Are", "The Champions");
+	printf("ft_strjoin: %s\n", a);
+	free (a);
+	a = ft_strjoin("We Are", "");
+	printf("ft_strjoin: %s\n", a);
+	free (a);
+	a = ft_strjoin("", "The Champions");
+	printf("ft_strjoin: %s\n", a);
+	free (a);
+	a = ft_strjoin("", "");
+	printf("ft_strjoin: %s\n", a);
+	free (a);
+	a = ft_strjoin("We Are", NULL);
+	printf("ft_strjoin: %s\n", a);
+	free (a);
+	a = ft_strjoin(NULL, "The Champions");
+	printf("ft_strjoin: %s\n", a);
+	free (a);
 
 	return (0);
 } */

@@ -6,7 +6,7 @@
 /*   By: rmedeiro <rmedeiro@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/08 23:20:17 by rmedeiro          #+#    #+#             */
-/*   Updated: 2025/04/20 16:48:17 by rmedeiro         ###   ########.fr       */
+/*   Updated: 2025/04/20 18:36:44 by rmedeiro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,7 +94,7 @@ char	**ft_split(char const *s, char c)
 	int		i;
 	
 	i = 0;
-	tab = ft_split("xxHelloxxWorldxx", 'x');
+	tab = ft_split("We ,Are,The,Champions,", ',');
 	while(tab[i] != NULL)
 	{
 		printf("%s\n", tab[i]);

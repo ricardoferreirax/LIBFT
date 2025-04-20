@@ -6,7 +6,7 @@
 /*   By: rmedeiro <rmedeiro@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/08 23:38:27 by rmedeiro          #+#    #+#             */
-/*   Updated: 2025/04/20 16:27:45 by rmedeiro         ###   ########.fr       */
+/*   Updated: 2025/04/20 19:39:35 by rmedeiro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,11 +31,21 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 
 /* int main(void)
 {	
-	char s1_strncmp[] = "Hello\r";
-	char s2_strncmp[] = "Hello\t";
-    
-	printf("ft_strncmp: %d\n", ft_strncmp(s1_strncmp, s2_strncmp, 7));
-	printf("strncmp: %d\n", strncmp(s1_strncmp, s2_strncmp, 7));
+	printf("ft_strncmp: %d\n", ft_strncmp("ABC", "ABC", 3));
+	printf("strncmp: %d\n\n", strncmp("ABC", "ABC", 3));
+
+	printf("ft_strncmp: %d\n", ft_strncmp("ABC", "ABC", 2));
+	printf("strncmp: %d\n\n", strncmp("ABC", "ABC", 2));
+	
+	printf("ft_strncmp: %d\n", ft_strncmp("ABC", "ABC", 0));
+	printf("strncmp: %d\n\n", strncmp("ABC", "ABC", 0));
+
+	printf("ft_strncmp: %d\n", ft_strncmp("ABC", "AB", 3));
+	printf("strncmp: %d\n", strncmp("ABC", "AB", 3));
+
+	// printf("\t%d\n", ft_strncmp("ABC", NULL, 3)); //segfault
+	// printf("\t%d\n", ft_strncmp(NULL, "ABC", 3)); //segfault
+	// printf("\t%d\n", ft_strncmp(NULL, NULL, 3)); //segfault
 
     return (0);
 } */

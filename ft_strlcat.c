@@ -6,7 +6,7 @@
 /*   By: rmedeiro <rmedeiro@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/08 23:30:46 by rmedeiro          #+#    #+#             */
-/*   Updated: 2025/04/20 16:37:09 by rmedeiro         ###   ########.fr       */
+/*   Updated: 2025/04/20 19:26:45 by rmedeiro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,18 +39,15 @@ size_t	ft_strlcat(char *dest, const char *src, size_t size)
 
 int	main(void)
 {
-	char src[] = "World";
-	char dest[50] = "Hello ";
-	size_t r1 = ft_strlcat(dest, src, 12);
-	
-	printf("ft_strlcat len: %ld\n", r1);
-	printf("dest: %s\n", dest);
+	char b[50] = "Hello";
 
-	char d2[50] = "Hello ";
-	size_t r2 = strlcat(d2, src, 12);
-	
-	printf("strlcat len: %ld\n", r2);
-	printf("dest: %s\n", d2);
+	printf("len: %zu + 1\n", ft_strlcat(b, " Wonderful", 16));
+	printf("ft_strlcat: %s\n", b);
+	printf("strlcat: %s\n\n", b);
+
+	printf("len: %zu + 1\n", ft_strlcat(b, " World!", 23));
+	printf("ft_strlcat: %s\n", b);
+	printf("strlcat: %s\n", b);
 
 	return (0);
 } */

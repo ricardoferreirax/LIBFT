@@ -6,7 +6,7 @@
 /*   By: rmedeiro <rmedeiro@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/08 14:17:35 by rmedeiro          #+#    #+#             */
-/*   Updated: 2025/04/10 10:58:02 by rmedeiro         ###   ########.fr       */
+/*   Updated: 2025/04/20 17:17:45 by rmedeiro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,22 +42,23 @@ int	ft_atoi(const char *str)
 
 int main(void)
 {
-	char *test1 = " ---+--+1234ab567";
-	char *test2 = "  42abc54";
-	char *test3= "2147483647";
-    char *test4= "-2147483648";
+	printf("ft_atoi: %d\n", ft_atoi("   \t\r\n\v\f-+123f"));
+	printf("atoi: %d\n\n", atoi("   \t\r\n\v\f-+123f"));
 
-    printf("String: '%s', ft_atoi: %d\n", test1, ft_atoi(test1));
-	printf("String: '%s', atoi: %d\n", test1, atoi(test1));
+	printf("ft_atoi: %d\n", ft_atoi("   \t\r\n\v\f-12 3f"));
+	printf("atoi: %d\n\n", atoi("   \t\r\n\v\f-12 3f"));
 	
-    printf("String: '%s', ft_atoi: %d\n", test2, ft_atoi(test2));
-	printf("String: '%s', atoi: %d\n", test2, atoi(test2));
+	printf("ft_atoi: %d\n", ft_atoi("   \t\r\n\v\f -2147483648"));
+	printf("atoi: %d\n\n", atoi("   \t\r\n\v\f -2147483648"));
 	
-    printf("String: '%s', ft_atoi: %d\n", test3, ft_atoi(test3));
-	printf("String: '%s', atoi: %d\n", test3, atoi(test3));
+	printf("ft_atoi: %d\n", ft_atoi("   \t\r\n\v\f 2147483647"));
+	printf("atoi: %d\n\n", atoi("   \t\r\n\v\f 2147483647"));
 	
-    printf("String: '%s', ft_atoi: %d\n", test4, ft_atoi(test4));
-	printf("String: '%s', atoi: %d\n", test4, atoi(test4));
+	printf("ft_atoi: %d\n", ft_atoi(""));
+	printf("atoi: %d\n", atoi(""));
+	
+	// printf("\t%d\n", ft_atoi(NULL)); //segfault
+	// printf("\t%d\n", atoi(NULL)); //segfault
 
     return (0);
 } */

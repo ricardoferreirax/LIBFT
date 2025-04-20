@@ -6,7 +6,7 @@
 /*   By: rmedeiro <rmedeiro@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/08 23:02:11 by rmedeiro          #+#    #+#             */
-/*   Updated: 2025/04/20 16:50:44 by rmedeiro         ###   ########.fr       */
+/*   Updated: 2025/04/20 18:26:28 by rmedeiro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 		while (n-- > 0)
 			tmp_dst[n] = tmp_src[n];
 	}
-	else if (tmp_dst < tmp_src)
+	else
 	{
 		idx = 0;
 		while (idx < n)

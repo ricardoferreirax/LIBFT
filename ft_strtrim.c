@@ -6,7 +6,7 @@
 /*   By: rmedeiro <rmedeiro@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/08 23:45:30 by rmedeiro          #+#    #+#             */
-/*   Updated: 2025/04/20 16:48:41 by rmedeiro         ###   ########.fr       */
+/*   Updated: 2025/04/20 20:50:26 by rmedeiro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,5 +55,23 @@ char	*ft_strtrim(const char *s1, char const *set)
 
 int	main(void)
 {
-	printf("String trimmed: %s\n", ft_strtrim("xxHexxlloxx", "xx"));
+	char *a;
+	
+	a = ft_strtrim("Hello World!", "He");
+	printf("ft_strtrim: %s\n", a); 
+	free (a);
+	a = ft_strtrim("\\nHello World\\n", "\\n");
+	printf("ft_strtrim: %s\n", a); 
+	free (a);
+	a = ft_strtrim("xxHelloxxWorldxx", "xx");
+	printf("ft_strtrim: %s\n", a); 
+	free (a);
+	a = ft_strtrim("Hello", NULL);
+	printf("ft_strtrim: %s\n", a); 
+	free (a);
+	a = ft_strtrim(NULL, "World");
+	printf("ft_strtrim: %s\n", a); 
+	free (a);
+
+	return (0);
 } */

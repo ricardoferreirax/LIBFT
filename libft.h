@@ -6,7 +6,7 @@
 /*   By: rmedeiro <rmedeiro@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/09 15:27:55 by rmedeiro          #+#    #+#             */
-/*   Updated: 2025/04/11 15:13:50 by rmedeiro         ###   ########.fr       */
+/*   Updated: 2025/04/20 17:07:06 by rmedeiro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,9 @@
 # define LIBFT_H
 
 # include <string.h>
-# include <stddef.h>
 # include <stdint.h>
 # include <stdio.h>
 # include <stdlib.h>
-# include <string.h>
 # include <unistd.h>
 
 void		ft_bzero(void *s, size_t n);

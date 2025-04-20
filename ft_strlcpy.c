@@ -6,7 +6,7 @@
 /*   By: rmedeiro <rmedeiro@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/08 23:32:13 by rmedeiro          #+#    #+#             */
-/*   Updated: 2025/04/17 19:15:37 by rmedeiro         ###   ########.fr       */
+/*   Updated: 2025/04/20 21:02:40 by rmedeiro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,18 +33,37 @@ size_t	ft_strlcpy(char *dest, const char *src, size_t size)
 
 int	main(void)
 {
-	char src[] = "Hello World";
-	char dest[50];
-	size_t r1 = ft_strlcpy(dest, src, 12);
+	char b[10];
+	size_t numb;
 	
-	printf("ft_strlcpy len: %ld\n", r1);
-	printf("dest: %s\n", dest);
+	numb = ft_strlcpy(b, "ABC", 3);
+	printf("len: %zu + 1\n", numb);
+	printf("ft_strlcpy: %s\n", b);
+	printf("strlcpy: %s\n\n", b);
 
-	char d2[50] = "Hello World";
-	size_t r2 = strlcpy(d2, src, 12);
 	
-	printf("strlcpy len: %ld\n", r2);
-	printf("dest: %s\n", d2);
+	numb = ft_strlcpy(b, "hello", 6);
+	printf("len: %zu + 1\n", numb);
+	printf("ft_strlcpy: %s\n", b);
+	printf("strlcpy: %s\n\n", b);
+	
+	
+	numb = ft_strlcpy(b, "hello", 3);
+	printf("len: %zu + 1\n", numb);
+	printf("ft_strlcpy: %s\n", b);
+	printf("strlcpy: %s\n\n", b);
+
+	
+	numb = ft_strlcpy(b, "ABC", 1);
+	printf("len: %zu + 1\n", numb);
+	printf("ft_strlcpy: %s\n", b);
+	printf("strlcpy: %s\n\n", b);
+
+	
+	numb = ft_strlcpy(b, "AB", 3);
+	printf("len: %zu + 1\n", numb);
+	printf("ft_strlcpy: %s\n", b);
+	printf("strlcpy: %s\n", b);
 
 	return (0);
 } */

@@ -6,7 +6,7 @@
 /*   By: rmedeiro <rmedeiro@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/08 14:58:14 by rmedeiro          #+#    #+#             */
-/*   Updated: 2025/04/20 16:50:00 by rmedeiro         ###   ########.fr       */
+/*   Updated: 2025/04/20 21:02:21 by rmedeiro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,10 +65,11 @@ char	*ft_itoa(int n)
 
 int main (void)
 {
-	int	n;
-
-	n = 234;
-	printf("lenght of the number: %i\n", numberlen(n));
-	printf("original number: %i\n", n);
-	printf("char number: %s\n", ft_itoa(n));
+	printf("%s\n", ft_itoa(-123456));
+	printf("%s\n", ft_itoa(-2147483648));
+	printf("%s\n", ft_itoa(2147483647));
+	printf("%s\n", ft_itoa(10));
+	printf("%s\n", ft_itoa(0));
+	
+	return (0);
 } */
