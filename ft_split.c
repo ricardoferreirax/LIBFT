@@ -6,7 +6,7 @@
 /*   By: rmedeiro <rmedeiro@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/08 23:20:17 by rmedeiro          #+#    #+#             */
-/*   Updated: 2025/04/20 18:36:44 by rmedeiro         ###   ########.fr       */
+/*   Updated: 2025/04/21 10:37:26 by rmedeiro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,7 @@ static char	*malloc_words(const char **s, char sep)
 	return (word);
 }
 
-void	free_split(char **array, int current)
+static void	free_split(char **array, int current)
 {
 	while (current >= 0)
 		free(array[current--]);

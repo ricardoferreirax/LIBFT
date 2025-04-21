@@ -6,7 +6,7 @@
 /*   By: rmedeiro <rmedeiro@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/08 23:02:11 by rmedeiro          #+#    #+#             */
-/*   Updated: 2025/04/20 18:26:28 by rmedeiro         ###   ########.fr       */
+/*   Updated: 2025/04/21 10:01:57 by rmedeiro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,11 @@
 
 void	*ft_memmove(void *dest, const void *src, size_t n)
 {
-	const unsigned char	*tmp_src;
-	unsigned char		*tmp_dst;
-	size_t				idx;
+	unsigned char	*tmp_src;
+	unsigned char	*tmp_dst;
+	size_t			idx;
 
-	tmp_src = (const unsigned char *)src;
+	tmp_src = (unsigned char *)src;
 	tmp_dst = (unsigned char *)dest;
 	if (tmp_dst > tmp_src)
 	{
