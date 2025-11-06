@@ -6,7 +6,7 @@
 /*   By: rmedeiro <rmedeiro@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/08 20:42:35 by rmedeiro          #+#    #+#             */
-/*   Updated: 2025/04/12 14:42:05 by rmedeiro         ###   ########.fr       */
+/*   Updated: 2025/11/03 22:59:36 by rmedeiro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,6 @@ void	ft_putendl_fd(char *s, int fd)
 
 /* int	main()
 {
-	ft_putendl_fd("Hello", 1);
+	ft_putendl_fd("", 1);
 	return (0);
 } */
