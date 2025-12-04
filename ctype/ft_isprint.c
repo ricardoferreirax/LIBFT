@@ -1,22 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_isprint.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rmedeiro <rmedeiro@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/09 15:27:55 by rmedeiro          #+#    #+#             */
-/*   Updated: 2025/12/04 14:29:05 by rmedeiro         ###   ########.fr       */
+/*   Created: 2025/04/08 14:54:33 by rmedeiro          #+#    #+#             */
+/*   Updated: 2025/12/04 14:21:24 by rmedeiro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
+#include "ctype.h"
 
-# include "ctype/ctype.h"
-# include "memory/memory.h"
-# include "output/output.h"
-# include "strings/ft_strings.h"
-# include "list/list.h"
+int	ft_isprint(int c)
+{
+	if (c >= 32 && c <= 126)
+		return (1);
+	return (0);
+}
 
-#endif
+/* #include <stdio.h>
+
+int main()
+{
+	printf("'a': %d\n", ft_isprint('a'));
+	printf("'1': %d\n", ft_isprint('1'));
+	printf("'B': %d\n", ft_isprint('B'));
+	printf("'!': %d\n", ft_isprint('!'));
+	printf("'\\n': %d\n", ft_isprint('\n'));
+	printf("140: %d\n", ft_isprint(140));
+
+	return (0);
+} */

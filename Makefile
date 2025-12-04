@@ -6,7 +6,7 @@
 #    By: rmedeiro <rmedeiro@student.42lisboa.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/04/09 00:23:24 by rmedeiro          #+#    #+#              #
-#    Updated: 2025/04/21 10:50:00 by rmedeiro         ###   ########.fr        #
+#    Updated: 2025/12/04 14:39:46 by rmedeiro         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,45 +14,87 @@ NAME = libft.a
 CC = cc
 CFLAGS = -Wall -Wextra -Werror
 RM = rm -f
-COMPRESS = ar rcs
+AR = ar rcs
 
-SRCS = ft_putchar_fd.c ft_putendl_fd.c ft_putnbr_fd.c ft_putstr_fd.c ft_bzero.c \
-       ft_calloc.c ft_memchr.c ft_memcmp.c ft_memcpy.c ft_memmove.c ft_memset.c \
-       ft_split.c ft_strchr.c ft_strdup.c ft_striteri.c ft_strjoin.c ft_strlcat.c \
-       ft_strlcpy.c ft_strlen.c ft_strmapi.c ft_strncmp.c ft_strnstr.c ft_strrchr.c \
-       ft_strtrim.c ft_substr.c ft_atoi.c ft_isalnum.c ft_isalpha.c ft_isascii.c \
-       ft_isdigit.c ft_isprint.c ft_itoa.c ft_tolower.c ft_toupper.c
+SRCS =  output/ft_putchar_fd.c \
+        output/ft_putendl_fd.c \
+        output/ft_putnbr_fd.c \
+        output/ft_putstr_fd.c \
+        output/ft_putchar.c \
+        output/ft_putnbr.c \
+        output/ft_putstr.c \
+        memory/ft_bzero.c \
+        memory/ft_calloc.c \
+        memory/ft_memchr.c \
+        memory/ft_memcmp.c \
+        memory/ft_memcpy.c \
+        memory/ft_memmove.c \
+        memory/ft_memset.c \
+        strings/ft_split.c \
+        strings/ft_strchr.c \
+        strings/ft_strdup.c \
+        strings/ft_striteri.c \
+        strings/ft_strjoin.c \
+        strings/ft_strlcat.c \
+        strings/ft_strlcpy.c \
+        strings/ft_strlen.c \
+        strings/ft_strmapi.c \
+        strings/ft_strncmp.c \
+        strings/ft_strnstr.c \
+        strings/ft_strrchr.c \
+        strings/ft_strtrim.c \
+        strings/ft_substr.c \
+        strings/ft_atoi.c \
+        strings/ft_itoa.c \
+        strings/ft_strcpy.c \
+        ctype/ft_isalnum.c \
+        ctype/ft_isalpha.c \
+        ctype/ft_isascii.c \
+        ctype/ft_isdigit.c \
+        ctype/ft_islower.c \
+        ctype/ft_isprint.c \
+        ctype/ft_isspace.c \
+        ctype/ft_isupper.c \
+        ctype/ft_isxdigit.c \
+        ctype/ft_tolower.c \
+        ctype/ft_toupper.c
 
-BONUS_SRCS = ft_lstnew_bonus.c ft_lstadd_front_bonus.c ft_lstsize_bonus.c ft_lstlast_bonus.c ft_lstadd_back_bonus.c \
-             ft_lstdelone_bonus.c ft_lstclear_bonus.c ft_lstiter_bonus.c ft_lstmap_bonus.c
+BONUS_SRCS = list/ft_lstnew_bonus.c \
+             list/ft_lstadd_front_bonus.c \
+             list/ft_lstsize_bonus.c \
+             list/ft_lstlast_bonus.c \
+             list/ft_lstadd_back_bonus.c \
+             list/ft_lstdelone_bonus.c \
+             list/ft_lstclear_bonus.c \
+             list/ft_lstiter_bonus.c \
+             list/ft_lstmap_bonus.c
 
 OBJS = $(SRCS:.c=.o)
 OBJS_BONUS = $(BONUS_SRCS:.c=.o)
 
+INCLUDES = -I. -Ictype -Imemory -Ioutput -Istrings -Ilist
+
 all: $(NAME)
 
 $(NAME): $(OBJS)
-	@$(COMPRESS) $(NAME) $(OBJS)
+	@$(AR) $(NAME) $(OBJS)
 	@echo "Library $(NAME) created!"
 
 bonus: $(OBJS) $(OBJS_BONUS)
-	@$(COMPRESS) $(NAME) $(OBJS) $(OBJS_BONUS)
+	@$(AR) $(NAME) $(OBJS) $(OBJS_BONUS)
 	@echo "Bonus added to $(NAME)!"
-	@touch bonus
 
 %.o: %.c
-	$(CC) $(CFLAGS) -c $< -o $@
+	$(CC) $(CFLAGS) $(INCLUDES) -c $< -o $@
 
 clean:
 	@$(RM) $(OBJS) $(OBJS_BONUS)
-	@touch bonus
-	@rm bonus
-	@echo "Cleaned object files."
+	@echo "Object files removed."
 
 fclean: clean
 	@$(RM) $(NAME)
-	@echo "All cleaned up: $(NAME)!"
+	@echo "Removed $(NAME)."
 
 re: fclean all
 
-.PHONY: all clean fclean re
+.PHONY: all clean fclean re bonus

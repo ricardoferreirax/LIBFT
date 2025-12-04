@@ -1,22 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_putchar.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rmedeiro <rmedeiro@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/09 15:27:55 by rmedeiro          #+#    #+#             */
-/*   Updated: 2025/12/04 14:29:05 by rmedeiro         ###   ########.fr       */
+/*   Created: 2025/12/04 14:18:24 by rmedeiro          #+#    #+#             */
+/*   Updated: 2025/12/04 14:18:35 by rmedeiro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
+#include "output.h"
 
-# include "ctype/ctype.h"
-# include "memory/memory.h"
-# include "output/output.h"
-# include "strings/ft_strings.h"
-# include "list/list.h"
-
-#endif
+void	ft_putchar(char c)
+{
+	write(1, &c, 1);
+}

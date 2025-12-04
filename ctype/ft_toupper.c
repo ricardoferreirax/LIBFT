@@ -1,22 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_toupper.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rmedeiro <rmedeiro@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/09 15:27:55 by rmedeiro          #+#    #+#             */
-/*   Updated: 2025/12/04 14:29:05 by rmedeiro         ###   ########.fr       */
+/*   Created: 2025/04/08 22:23:14 by rmedeiro          #+#    #+#             */
+/*   Updated: 2025/12/04 14:21:38 by rmedeiro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
+#include "ctype.h"
 
-# include "ctype/ctype.h"
-# include "memory/memory.h"
-# include "output/output.h"
-# include "strings/ft_strings.h"
-# include "list/list.h"
+int	ft_toupper(int c)
+{
+	if (c >= 'a' && c <= 'z')
+		c -= 32;
+	return (c);
+}
 
-#endif
+/* int main()
+{
+	char c = 'C';
+	printf(" %d\n", ft_toupper(c));
+} */

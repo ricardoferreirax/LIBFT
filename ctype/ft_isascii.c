@@ -1,22 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_isascii.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rmedeiro <rmedeiro@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/09 15:27:55 by rmedeiro          #+#    #+#             */
-/*   Updated: 2025/12/04 14:29:05 by rmedeiro         ###   ########.fr       */
+/*   Created: 2025/04/08 14:50:51 by rmedeiro          #+#    #+#             */
+/*   Updated: 2025/12/04 14:21:09 by rmedeiro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
+#include "ctype.h"
 
-# include "ctype/ctype.h"
-# include "memory/memory.h"
-# include "output/output.h"
-# include "strings/ft_strings.h"
-# include "list/list.h"
+int	ft_isascii(int c)
+{
+	if (c >= 0 && c <= 127)
+		return (1);
+	return (0);
+}
 
-#endif
+/* #include <stdio.h>
+
+int main()
+{
+	printf("'a': %d\n", ft_isascii('a'));
+	printf("'1': %d\n", ft_isascii('1'));
+	printf("'B': %d\n", ft_isascii('B'));
+	printf("'!': %d\n", ft_isascii('!'));
+	printf("'\\n': %d\n", ft_isascii('\n'));
+	printf("140: %d\n", ft_isascii(140));
+
+	return (0);
+} */

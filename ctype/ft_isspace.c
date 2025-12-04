@@ -1,22 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_isspace.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rmedeiro <rmedeiro@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/09 15:27:55 by rmedeiro          #+#    #+#             */
-/*   Updated: 2025/12/04 14:29:05 by rmedeiro         ###   ########.fr       */
+/*   Created: 2025/12/04 11:49:25 by rmedeiro          #+#    #+#             */
+/*   Updated: 2025/12/04 11:49:40 by rmedeiro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
+#include "ctype.h"
 
-# include "ctype/ctype.h"
-# include "memory/memory.h"
-# include "output/output.h"
-# include "strings/ft_strings.h"
-# include "list/list.h"
-
-#endif
+int	ft_isspace(int c)
+{
+	if (c == ' ' || c == 9 || c == '\n' || c == '\v' || c == '\f' || c == '\r')
+		return (1);
+	return (0);
+}
